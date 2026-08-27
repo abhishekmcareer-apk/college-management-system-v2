@@ -1,0 +1,26 @@
+.loading-container {
+    min-height: calc(100vh - 72px); /* 100vh aur 72px ke beech me jo - hai uske dono tarah space rahna chahiye nahi to error dega*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f8fc;
+    flex-direction: column;
+}
+
+.spinner{
+    height: 40px;
+    width: 40px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #2565eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

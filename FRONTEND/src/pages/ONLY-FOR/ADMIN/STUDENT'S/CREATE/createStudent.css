@@ -1,0 +1,199 @@
+.create-student-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #020507;
+    color: #ffffff;
+    padding: 50px 20px 90px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.create-student-container {
+    width: 100%;
+    max-width: 720px;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes studentGlowPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.45;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 0.75;
+    }
+}
+
+.create-student-page::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 550px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: studentGlowPulse 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes movingStudentTag {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.create-student-header {
+    margin-bottom: 24px;
+}
+
+.create-student-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #34d399;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    animation: movingStudentTag 3s ease-in-out infinite;
+}
+
+.create-student-tag::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+}
+
+.create-student-header h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.5px;
+}
+
+.create-student-description {
+    font-size: 13.5px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.create-student-card {
+    background: linear-gradient(180deg, #09131a 0%, #04080b 100%);
+    border: 1px solid #1c3342;
+    border-radius: 14px;
+    padding: 28px 26px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+}
+
+.create-student-card h2 {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #162733;
+    letter-spacing: -0.2px;
+}
+
+.form-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.create-student-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.create-student-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.create-student-field input {
+    width: 100%;
+    background: #020608;
+    border: 1px solid #1c3342;
+    border-radius: 8px;
+    padding: 11px 13px;
+    color: #ffffff;
+    font-size: 13.5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.create-student-field input::placeholder {
+    color: #475569;
+}
+
+.create-student-field input:focus {
+    border-color: #10b981;
+    background: #050e13;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.create-student-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    background: #10b981;
+    color: #020608;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+    transition: all 0.2s ease;
+}
+
+.create-student-btn:hover {
+    background: #34d399;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+@media (max-width: 600px) {
+    .create-student-page {
+        padding: 40px 14px 70px;
+    }
+
+    .create-student-card {
+        padding: 20px 16px;
+    }
+
+    .create-student-header h1 {
+        font-size: 22px;
+    }
+
+    .form-grid-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

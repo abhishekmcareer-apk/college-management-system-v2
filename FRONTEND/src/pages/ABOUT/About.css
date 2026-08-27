@@ -1,0 +1,422 @@
+/* Page Layout Wrapper */
+.about-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #030708;
+    color: #f8fafc;
+    overflow-x: hidden;
+}
+
+/* Global Content Container */
+.about-content-container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Hero Header Section */
+.about-hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 90px 20px 60px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero-section::before {
+    content: "";
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    top: -30%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 60%);
+    filter: blur(30px);
+    animation: aboutGlow 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes aboutGlow {
+    0%,100%{
+        transform: translate(-50%,-50%),scale(1);
+        opacity: 0.7;
+    }
+    50%{
+        transform: translate(-50%,-50%),scale(1.1);
+        opacity: 1;
+    }
+}
+
+.about-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 30px;
+    animation: heroAnim 5s ease-in-out infinite;
+}
+
+@keyframes heroAnim {
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translatey(-10px);
+    }
+}
+
+.about-hero-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.about-hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin: 0 0 16px 0;
+    color: #ffffff;
+}
+
+.about-hero-subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Vision & Mission Section */
+.vision-mission-section {
+    padding: 70px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.vision-card,
+.mission-card {
+    background: linear-gradient(180deg, #0d1a22 0%, #060e13 100%);
+    border: 1px solid #162c38;
+    border-radius: 16px;
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.vision-card::before,
+.mission-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.18) 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.vision-card:hover,
+.mission-card:hover {
+    transform: translateY(-5px);
+    border-color: #10b981;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.12);
+}
+
+.vision-card:hover::before,
+.mission-card:hover::before {
+    opacity: 1;
+}
+
+.card-icon-wrapper {
+    font-size: 28px;
+    margin-bottom: 18px;
+    display: inline-block;
+}
+
+.card-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.card-description {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #829a9e;
+    margin: 0;
+}
+
+/* Principal / Leadership Section */
+.principal-message-section {
+    padding: 70px 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #060e12;
+    border-top: 1px solid #162733;
+    border-bottom: 1px solid #162733;
+}
+
+.principal-card {
+    background: linear-gradient(180deg, #0d1a22 0%, #060e13 100%);
+    border: 1px solid #162c38;
+    border-radius: 20px;
+    padding: 44px 36px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.principal-avatar-wrapper {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    background: #030708;
+    border: 2px solid #162733;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.principal-avatar-icon {
+    font-size: 44px;
+}
+
+.principal-content {
+    flex: 1;
+}
+
+.principal-label {
+    color: #10b981;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.principal-quote {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin: 0 0 12px 0;
+}
+
+.principal-statement {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #829a9e;
+    margin: 0 0 20px 0;
+}
+
+.principal-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 2px 0;
+}
+
+.principal-designation {
+    font-size: 13px;
+    color: #5b737a;
+}
+
+/* Core Pillars Section */
+.core-pillars-section {
+    padding: 70px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-header-block {
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto 48px auto;
+}
+
+.section-main-heading {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.section-sub-heading {
+    font-size: 14.5px;
+    color: #829a9e;
+    margin: 0;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.pillar-card {
+    background: #0b151b;
+    border: 1px solid #162733;
+    border-radius: 14px;
+    padding: 30px 22px;
+    transition: all 0.25s ease;
+}
+
+.pillar-card:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    transform: translateY(-3px);
+}
+
+.pillar-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.pillar-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.pillar-details {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #829a9e;
+    margin: 0;
+}
+
+/* Bottom Call To Action */
+.about-cta-section {
+    padding: 50px 0 90px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-cta-card {
+    background: linear-gradient(180deg, #0d1a22 0%, #060e13 100%);
+    border: 1px solid #162c38;
+    border-radius: 20px;
+    padding: 46px 30px;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.cta-description {
+    font-size: 15px;
+    color: #829a9e;
+    margin: 0 0 28px 0;
+}
+
+.cta-actions-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cta-action-btn {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.cta-action-btn.primary-action {
+    background: #10b981;
+    color: #030708;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+}
+
+.cta-action-btn.primary-action:hover {
+    background: #34d399;
+    transform: translateY(-2px);
+}
+
+.cta-action-btn.secondary-action {
+    background: #0b151b;
+    color: #f1f5f9;
+    border: 1px solid #162733;
+}
+
+.cta-action-btn.secondary-action:hover {
+    background: #101e26;
+    border-color: #243d4f;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 860px) {
+    .vision-mission-grid,
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .principal-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-hero-title {
+        font-size: 30px;
+    }
+
+    .cta-actions-group {
+        flex-direction: column;
+    }
+
+    .cta-action-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}

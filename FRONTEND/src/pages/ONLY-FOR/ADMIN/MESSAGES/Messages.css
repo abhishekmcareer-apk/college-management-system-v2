@@ -1,0 +1,222 @@
+.messages-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #030708;
+    color: #ffffff;
+    padding: 50px 20px 90px 20px;
+    box-sizing: border-box;
+    color-scheme: dark;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.messages-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes messagesGlowPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.55;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 0.8;
+    }
+}
+
+.messages-page::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 500px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 70%);
+    filter: blur(50px);
+    animation: messagesGlowPulse 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes movingMessagesTag {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.messages-header {
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.messages-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid #10b981;
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    animation: movingMessagesTag 3s ease-in-out infinite;
+}
+
+.messages-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+}
+
+.messages-header h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.messages-header p {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.messages-box {
+    background: linear-gradient(180deg, #0d1a22 0%, #060e13 100%);
+    border: 1px solid #234557;
+    border-radius: 16px;
+    padding: 24px 22px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.messages-box h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 18px 0;
+    letter-spacing: -0.3px;
+    border-bottom: 1px solid #234557;
+    padding-bottom: 12px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+}
+
+.messages-table th {
+    padding: 12px 14px;
+    color: #93c5fd;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #234557;
+}
+
+.messages-table td {
+    padding: 14px;
+    color: #ffffff;
+    border-bottom: 1px solid #162733;
+}
+
+.sender-name {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.email-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.subject-pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #34d399;
+    font-weight: 700;
+}
+
+.message-content-cell {
+    color: #cbd5e1;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+.message-delete-btn {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #f87171;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.message-delete-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.table-empty-cell {
+    text-align: center;
+    color: #cbd5e1;
+    padding: 30px !important;
+}
+
+@media (max-width: 600px) {
+    .messages-page {
+        padding: 35px 14px 60px 14px;
+    }
+
+    .messages-header h1 {
+        font-size: 22px;
+    }
+}

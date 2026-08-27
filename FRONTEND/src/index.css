@@ -1,0 +1,25 @@
+:root {
+    --bg-dark-black: #050b0e;
+    --bg-card-navy: #0b151b;
+    --bg-card-hover: #101e26;
+    --border-gray: #162733;
+    --border-gold: #059669;
+    --gold-color: #10b981;
+    --text-white: #f1f7f6;
+    --text-gray: #829a9e;
+    --nav-link-color: #9eb5b8;
+    --nav-link-hover: #34d399;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark-black);
+    color: var(--text-white);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    background-color: var(--bg-dark-black);
+}
