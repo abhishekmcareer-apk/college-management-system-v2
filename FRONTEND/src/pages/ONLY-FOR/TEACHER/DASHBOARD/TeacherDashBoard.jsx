@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import api from "../../../../api/api.js";
-import "./Dashboard.css";
+import "./DashBoard.css";
 import Loader from "../../../../Components/LOADER/Loader.jsx";
 import gsap from "gsap";
 
