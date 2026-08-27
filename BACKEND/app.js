@@ -12,11 +12,16 @@ const app = express()
 
 
 app.use(cors({
-    // origin: "http://localhost:5173",
+    origin: ["https://college-management-frontend-v2.onrender.com",
+        "http://localhost:5173"
+    ],
     credentials: true,
-    origin:true
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }
 ))
+
+app.options("*", cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -31,9 +36,9 @@ app.use("/api/student", studentRoutes)
 
 app.use("/api/admin", adminRoutes)
 
-app.use("/api/teacher",teacherRoutes)
+app.use("/api/teacher", teacherRoutes)
 
-app.use("/api/courses",courseRoutes)
+app.use("/api/courses", courseRoutes)
 
 app.use("/api/contact", contactRoutes)
 
