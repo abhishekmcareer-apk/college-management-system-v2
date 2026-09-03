@@ -1,7 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import api from "../../api/api";
+import { logOut } from "../../REDUX/authSlice";
 import "./Footer.css";
 
 const Footer = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.auth.user);
+
+    const handleLogout = async () => {
+        try {
+            await api.get("/auth/logout");
+            dispatch(logOut());
+            navigate("/login");
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -20,8 +37,21 @@ const Footer = () => {
                         <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/courses">Courses</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/login">Dashbord</Link></li>
                         <li><Link to="/admission">Admission</Link></li>
+                        <li><Link to="/chat">Chat</Link></li>
+                        
+                        {user ? (
+                            <>
+                                <li><Link to={user.role === "admin" ? "/admin/dashboard" : user.role === "teacher" ? "/teacher/dashboard" : "/student/dashboard"}>Dashboard</Link></li>
+                                <li>
+                                    <button onClick={handleLogout} className="footer-logout-btn">
+                                        Logout
+                                    </button>
+                                </li>
+                            </>
+                        ) : (
+                            <li><Link to="/login">Portal Login</Link></li>
+                        )}
                     </ul>
                 </div>
 

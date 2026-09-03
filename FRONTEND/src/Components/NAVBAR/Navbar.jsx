@@ -70,6 +70,7 @@ const Navbar = () => {
                     <li><Link to="/courses">Courses</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/admission">Admission</Link></li>
+                    <li><Link to="/chat">Chat</Link></li>
 
                     {!user ? (
                         <li>
@@ -108,6 +109,7 @@ const Navbar = () => {
                     <Link to="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
                     <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
                     <Link to="/admission" onClick={()=>setIsOpen(false)}>Admission</Link>
+                    <Link to="/chat" onClick={()=>setIsOpen(false)}>Chat</Link>
 
                     {!user ? (
                         <div className="mobile-auth-wrap">

@@ -47,6 +47,7 @@ import StudentDashBoard from "./pages/ONLY-FOR/STUDENT/DASH-BOARD/StudentDashBoa
 import Admissions from "./pages/ADMISSION/Admission.jsx";
 import ManageCourses from "./pages/ONLY-FOR/ADMIN/COURCES/ManageCources.jsx";
 import Messages from "./pages/ONLY-FOR/ADMIN/MESSAGES/Messages.jsx";
+import Chat from "./Components/SOCKET-CHAT/Chat.jsx";
 
 
 function App() {
@@ -129,6 +130,8 @@ function App() {
 
         {/* THIS IS FOR STUDENT */}
         <Route path="/student/dashboard" element={<StudentDashBoard />}></Route>
+
+        <Route path="/chat" element={<Chat/>}></Route>
 
         <Route path="*" element={<NotFound />}></Route>
         
